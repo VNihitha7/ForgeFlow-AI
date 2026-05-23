@@ -1,16 +1,274 @@
-# React + Vite
+# ForgeFlow AI 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Smart Manufacturing CRM & Sales Pipeline Platform
 
-Currently, two official plugins are available:
+ForgeFlow AI is a modern full-stack CRM platform built for manufacturing and industrial businesses to manage leads, sales pipelines, analytics, and team performance efficiently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Designed with a premium SaaS-style interface, ForgeFlow AI helps businesses streamline customer management, track sales progress visually, and gain valuable business insights in real-time.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# ✨ Features
 
-## Expanding the ESLint configuration
+## 📊 Dashboard Analytics
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Real-time business overview
+* Revenue tracking charts
+* Lead conversion insights
+* KPI performance cards
+* Hot leads section
+
+---
+
+## 👥 Leads Management
+
+* Add new leads
+* Edit existing leads
+* Delete leads
+* Search functionality
+* MongoDB database integration
+* Priority & status tracking
+
+---
+
+## 🔄 Drag & Drop Sales Pipeline
+
+* Kanban-style pipeline management
+* Drag leads between stages
+* Live status updates
+* Visual workflow tracking
+
+Pipeline Stages:
+
+* New Lead
+* Quotation Sent
+* Negotiation
+* Won
+
+---
+
+## 📈 Analytics Dashboard
+
+* Revenue analytics
+* Lead distribution charts
+* Conversion tracking
+* Business performance metrics
+* Interactive charts using Recharts
+
+---
+
+## 👨‍💼 Team Management
+
+* Add/remove team members
+* Performance tracking
+* Employee statistics
+* Deal tracking
+* Professional team cards UI
+
+---
+
+## ⚙️ Settings Module
+
+* Company settings
+* Notification preferences
+* Theme toggle support
+* User profile section
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+* React.js
+* Tailwind CSS
+* React Router DOM
+* Recharts
+* React Icons
+* React Hot Toast
+* @hello-pangea/dnd
+
+---
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* REST APIs
+
+---
+
+# 🗄️ Database
+
+MongoDB Atlas is used for:
+
+* Leads storage
+* Analytics calculations
+* Pipeline updates
+* CRM data management
+
+---
+
+# 📂 Project Structure
+
+```bash
+ForgeFlow-AI/
+│
+├── client/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── components/
+│   │   └── App.jsx
+│
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
+```
+
+---
+
+# 🚀 Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/ForgeFlow-AI.git
+```
+
+---
+
+## 2️⃣ Install Frontend Dependencies
+
+```bash
+cd client
+npm install
+```
+
+---
+
+## 3️⃣ Install Backend Dependencies
+
+```bash
+cd ../server
+npm install
+```
+
+---
+
+## 4️⃣ Configure Environment Variables
+
+Create `.env` file inside `server/`
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+```
+
+---
+
+## 5️⃣ Run Backend Server
+
+```bash
+npm run server
+```
+
+---
+
+## 6️⃣ Run Frontend
+
+```bash
+cd ../client
+npm run dev
+```
+
+---
+
+# 🌐 API Endpoints
+
+## Leads API
+
+| Method | Endpoint                | Description            |
+| ------ | ----------------------- | ---------------------- |
+| GET    | `/api/leads`            | Get all leads          |
+| POST   | `/api/leads`            | Add new lead           |
+| PUT    | `/api/leads/:id`        | Update lead            |
+| DELETE | `/api/leads/:id`        | Delete lead            |
+| PUT    | `/api/leads/status/:id` | Update pipeline status |
+
+---
+
+## Dashboard API
+
+| Method | Endpoint         |
+| ------ | ---------------- |
+| GET    | `/api/dashboard` |
+
+---
+
+## Analytics API
+
+| Method | Endpoint         |
+| ------ | ---------------- |
+| GET    | `/api/analytics` |
+
+---
+
+# 🎨 UI Highlights
+
+* Modern SaaS dashboard design
+* Dark mode interface
+* Fully responsive layout
+* Smooth animations
+* Glassmorphism-inspired cards
+* Premium admin panel experience
+
+---
+
+# 📸 Future Improvements
+
+* Authentication & Authorization
+* Role-based access
+* AI-powered lead scoring
+* Email automation
+* WhatsApp integration
+* Real-time notifications
+* Export reports
+* Mobile app support
+
+---
+
+# 👩‍💻 Author
+
+### Nihitha Velpuru
+
+Built with passion using the MERN Stack 🚀
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+* Star the repository
+* Fork the project
+* Share feedback
+* Contribute improvements
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 💡 Inspiration
+
+ForgeFlow AI was created to simplify manufacturing sales operations through a clean, intelligent, and modern CRM experience.
