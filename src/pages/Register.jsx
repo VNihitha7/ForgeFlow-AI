@@ -1,0 +1,146 @@
+import { useState } from "react";
+
+import { useNavigate } from "react-router-dom";
+
+import toast from "react-hot-toast";
+
+import {
+  registerUser,
+} from "../api/authApi";
+
+function Register() {
+  const navigate =
+    useNavigate();
+
+  const [formData, setFormData] =
+    useState({
+      name: "",
+      email: "",
+      password: "",
+    });
+
+  // HANDLE CHANGE
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]:
+        e.target.value,
+    });
+  };
+
+  // REGISTER
+  const handleRegister =
+    async (e) => {
+      e.preventDefault();
+
+      try {
+        const res =
+          await registerUser(
+            formData
+          );
+
+        localStorage.setItem(
+          "userInfo",
+          JSON.stringify(
+            res.data
+          )
+        );
+
+        toast.success(
+          "Registration Successful 🚀"
+        );
+
+        navigate("/");
+      } catch (error) {
+        toast.error(
+          error.response?.data
+            ?.message ||
+            "Registration Failed"
+        );
+      }
+    };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#020617] text-white">
+
+      <div className="bg-[#111827] border border-slate-800 p-10 rounded-[35px] w-full max-w-md shadow-2xl">
+
+        <h1 className="text-4xl font-bold mb-8 text-center">
+          Register
+        </h1>
+
+        <form
+          onSubmit={
+            handleRegister
+          }
+          className="space-y-5"
+        >
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={
+              formData.name
+            }
+            onChange={
+              handleChange
+            }
+            className="w-full bg-slate-900 border border-slate-700 rounded-2xl px-5 py-4 outline-none focus:border-cyan-500"
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={
+              formData.email
+            }
+            onChange={
+              handleChange
+            }
+            className="w-full bg-slate-900 border border-slate-700 rounded-2xl px-5 py-4 outline-none focus:border-cyan-500"
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={
+              formData.password
+            }
+            onChange={
+              handleChange
+            }
+            className="w-full bg-slate-900 border border-slate-700 rounded-2xl px-5 py-4 outline-none focus:border-cyan-500"
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-cyan-500 hover:bg-cyan-600 py-4 rounded-2xl font-semibold transition-all"
+          >
+            Register
+          </button>
+
+        </form>
+
+        <p className="text-slate-400 mt-6 text-center">
+          Already have an account?
+          <span
+            onClick={() =>
+              navigate(
+                "/login"
+              )
+            }
+            className="text-cyan-400 cursor-pointer ml-2"
+          >
+            Login
+          </span>
+        </p>
+
+      </div>
+    </div>
+  );
+}
+
+export default Register;
